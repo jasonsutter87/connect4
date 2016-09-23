@@ -15,7 +15,13 @@ Game.prototype.boardToMatrix = function() {
   this.boardMatrix = boardMatrix.reverse()
 }
 
-Game.prototype.placeDisc = function(index){}
+Game.prototype.placeDisc = function(index){
+	if(index > 42){
+		return "Spot not on the board"	
+	}else{
+
+	}
+}
 
 Game.prototype.matrixToBoard = function(){}
 Game.prototype.whoeseTurn = function(){}

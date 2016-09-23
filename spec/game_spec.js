@@ -69,4 +69,10 @@ describe("game play", function() {
   it("Cant place disc on an already taken loaction", function() {
      expect(game3.placeDisc(2)).toEqual("Spots Taken");
   });
+
+
+  it("Cant place disc off the board", function() {
+     expect(game3.placeDisc(60)).toEqual("Spot not on the board");
+  });
+
 });
