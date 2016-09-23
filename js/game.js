@@ -50,7 +50,9 @@ Game.prototype.placeDisc = function(index){
 	}
 }
 
-Game.prototype.matrixToBoard = function(){}
+Game.prototype.matrixToBoard = function(){
+	this.board = [].concat.apply([], this.boardMatrix )
+}
 
 
 Game.prototype.transpose = function() {
