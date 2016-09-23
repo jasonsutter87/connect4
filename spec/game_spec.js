@@ -24,20 +24,21 @@ describe("generates a new board", function() {
 describe("determins whoese turn", function() {
   beforeEach(function() {
     game = new Game(['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
-    game1 = new Game(['R','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
-    game2 = new Game(['R','B','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
   });
 
   it("red always goes first", function() {
-     expect(game.whoeseTurn()).toEqual('Red');
+     expect(game.currentTurn).toEqual('R');
   });
 
   it("black goes after red", function() {
-     expect(game.whoeseTurn()).toEqual('Black');
+     game.placeDisc(1);
+     expect(game.currentTurn).toEqual('B');
   });
 
   it("red goes after black", function() {
-     expect(game.whoeseTurn()).toEqual('Red');
+     game.placeDisc(1);
+     game.placeDisc(2);
+     expect(game.currentTurn).toEqual('R');
   });
 });
 
@@ -55,7 +56,8 @@ describe("game play", function() {
   });
 
   it("black turn, places disc in location number 2", function() {
-     expect(game1.placeDisc(2)).toEqual(game2.board);
+     game.placeDisc(1)
+     expect(game.placeDisc(2)).toEqual(game2.board);
   });
 
   it("red turn, places disc in location number 8", function() {
