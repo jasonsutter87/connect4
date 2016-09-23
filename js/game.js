@@ -1,6 +1,5 @@
 var Game = function(boardArray) {
-  // this.boardMatrix = [];
-  // this.tempBoard = [];
+  this.boardMatrix = [];
   if(boardArray != null){
   	this.board = boardArray
   }else{
@@ -8,11 +7,18 @@ var Game = function(boardArray) {
   }
  }
 
+Game.prototype.boardToMatrix = function() {
+  boardMatrix = [];
+  for (i=0; i<6; i++) {
+    boardMatrix.push(this.board.slice((i*7), ((i+1)*7)));
+  }
+  this.boardMatrix = boardMatrix.reverse()
+}
 
-Game.prototype.boardToMatrix = function(){}
+Game.prototype.placeDisc = function(index){}
+
 Game.prototype.matrixToBoard = function(){}
 Game.prototype.whoeseTurn = function(){}
-Game.prototype.placeDisc = function(index){}
 
 
 Game.prototype.transpose = function() {
@@ -31,6 +37,7 @@ Game.prototype.checkDiangles = function(){}
 
 
 
-// //Driver Code
-// game = new Game();
-// console.log(game.board);
+//Driver Code
+game = new Game();
+game.boardToMatrix()
+console.log(game.boardMatrix)
