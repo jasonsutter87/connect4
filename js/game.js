@@ -5,10 +5,10 @@ var Game = function(boardString) {
  }
 
 
-Game.prototype.boardToMatrix = = function(){}
-Game.prototype.matrixToBoard = = function(){}
-Game.prototype.whoesTurn = = function(){}
-Game.prototype.placeDisc = = function(){}
+Game.prototype.boardToMatrix = function(){}
+Game.prototype.matrixToBoard = function(){}
+Game.prototype.whoesTurn = function(){}
+Game.prototype.placeDisc = function(){}
 
 
 Game.prototype.transpose = function() {
@@ -20,13 +20,13 @@ Game.prototype.transpose = function() {
   });
  }
 
-Game.prototype.whoWon = = function(){}
-Game.prototype.gameOver = = function(){}
-Game.prototype.checkRows = = function(){}
-Game.prototype.checkDiangles = = function(){}
+Game.prototype.whoWon = function(){}
+Game.prototype.gameOver = function(){}
+Game.prototype.checkRows = function(){}
+Game.prototype.checkDiangles = function(){}
 
 
 
-//Driver Code
-game = new Game();
-console.log(game.board);
+// //Driver Code
+// game = new Game();
+// console.log(game.board);
