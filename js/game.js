@@ -1,14 +1,18 @@
-var Game = function(boardString) {
-  this.boardMatrix = [];
-  this.tempBoard = [];
-  this.board = ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''];
+var Game = function(boardArray) {
+  // this.boardMatrix = [];
+  // this.tempBoard = [];
+  if(boardArray != null){
+  	this.board = boardArray
+  }else{
+  	this.board = ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''];
+  }
  }
 
 
 Game.prototype.boardToMatrix = function(){}
 Game.prototype.matrixToBoard = function(){}
-Game.prototype.whoesTurn = function(){}
-Game.prototype.placeDisc = function(){}
+Game.prototype.whoeseTurn = function(){}
+Game.prototype.placeDisc = function(index){}
 
 
 Game.prototype.transpose = function() {
