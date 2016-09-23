@@ -1,5 +1,6 @@
 $(document).on('ready', function(){
 	console.log('READY')
+	game = new Game()
 	clickEvents();
 })
 
@@ -8,31 +9,67 @@ $(document).on('ready', function(){
 
 clickEvents = function(){
 	$('.col1').on('click', function(){
-		 console.log("Column 1 was clicked on")
+		 game.placeDisc($(this).attr('id'))
+		 if(game.board[$(this).attr('id') - 1] == "R"){
+		 	$(this).css('background-color', 'red')
+		 }else{
+		 	$(this).css('background-color', 'black')
+		 }
+
 	})
 
 	$('.col2').on('click', function(){
-		console.log("Column 2 was clicked on")
+		game.placeDisc($(this).attr('id'))
+		 if(game.board[$(this).attr('id') - 1] == "R"){
+		 	$(this).css('background-color', 'red')
+		 }else{
+		 	$(this).css('background-color', 'black')
+		 }
 	})
 
 	$('.col3').on('click', function(){
-		console.log("Column 3 was clicked on")
+		game.placeDisc($(this).attr('id'))
+		 if(game.board[$(this).attr('id') - 1] == "R"){
+		 	$(this).css('background-color', 'red')
+		 }else{
+		 	$(this).css('background-color', 'black')
+		 }
 	})
 
 	$('.col4').on('click', function(){
-		console.log("Column 4 was clicked on")
+		game.placeDisc($(this).attr('id'))
+		 if(game.board[$(this).attr('id') - 1] == "R"){
+		 	$(this).css('background-color', 'red')
+		 }else{
+		 	$(this).css('background-color', 'black')
+		 }
 	})
 
 	$('.col5').on('click', function(){
-		console.log("Column 5 was clicked on")
+		game.placeDisc($(this).attr('id'))
+		 if(game.board[$(this).attr('id') - 1] == "R"){
+		 	$(this).css('background-color', 'red')
+		 }else{
+		 	$(this).css('background-color', 'black')
+		 }
 	})
 	
 	$('.col6').on('click', function(){
-		console.log("Column 6 was clicked on")
+		game.placeDisc($(this).attr('id'))
+		 if(game.board[$(this).attr('id') - 1] == "R"){
+		 	$(this).css('background-color', 'red')
+		 }else{
+		 	$(this).css('background-color', 'black')
+		 }
 	})
 
 	$('.col7').on('click', function(){
-		console.log("Column 7 was clicked on")
+		game.placeDisc($(this).attr('id'))
+		 if(game.board[$(this).attr('id') - 1] == "R"){
+		 	$(this).css('background-color', 'red')
+		 }else{
+		 	$(this).css('background-color', 'black')
+		 }
 	})
 }
 

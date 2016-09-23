@@ -16,9 +16,12 @@ Game.prototype.boardToMatrix = function() {
   this.boardMatrix = boardMatrix.reverse()
 }
 Game.prototype.nextTurn = function(){
+	var turn = document.getElementById("Turn");
 	if(this.currentTurn == 'R'){
+		 $('#Turn').css('background-color', 'black')
 		 this.currentTurn = 'B'
 	}else{
+		 $(turn).css('background-color', 'red')
 		 this.currentTurn = 'R'
 	}
 }
@@ -63,22 +66,4 @@ Game.prototype.whoWon = function(){}
 Game.prototype.gameOver = function(){}
 Game.prototype.checkRows = function(){}
 Game.prototype.checkDiangles = function(){}
-
-
-
-// Driver Code
-// game = new Game();
-// console.log(game.currentTurn)
-// game.placeDisc(1)
-// game.boardToMatrix()
-// console.log(game.boardMatrix)
-// console.log(game.currentTurn)
-// game.placeDisc(2)
-// game.boardToMatrix()
-// console.log(game.boardMatrix)
-// console.log(game.currentTurn)
-// game.placeDisc(8)
-// game.boardToMatrix()
-// console.log(game.boardMatrix)
-// console.log(game.currentTurn)
 
