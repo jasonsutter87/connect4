@@ -19,5 +19,9 @@ body{
 }
 
 .board{
+	padding-top: 25px;
+	border-radius: 25px;
+	width: 790px;
+	height: 675px;
 	background-color: blue;
 }
