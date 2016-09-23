@@ -10,6 +10,14 @@ body{
   padding: 2px;
 }
 
+#turn{
+  background-color: red;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+
 .box{
   background-color: tan;
   border-radius: 50px;
@@ -19,5 +27,9 @@ body{
 }
 
 .board{
+	padding-top: 25px;
+	border-radius: 25px;
+	width: 790px;
+	height: 675px;
 	background-color: blue;
 }
