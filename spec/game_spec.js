@@ -44,6 +44,7 @@ describe("determins whoese turn", function() {
 
 describe("game play", function() {
   beforeEach(function() {
+    game = new Game();
     game1 = new Game(['R','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
     game2 = new Game(['R','B','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
     game3 = new Game(['R','B','','','','','','R','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
@@ -53,11 +54,19 @@ describe("game play", function() {
      expect(game.placeDisc(1)).toEqual(game1.board);
   });
 
-  it("red turn, places disc in location number 2", function() {
-     expect(game.placeDisc(2)).toEqual(game2.board);
+  it("black turn, places disc in location number 2", function() {
+     expect(game1.placeDisc(2)).toEqual(game2.board);
   });
 
   it("red turn, places disc in location number 8", function() {
-     expect(game.placeDisc(8)).toEqual(game3.board);
+     expect(game2.placeDisc(8)).toEqual(game3.board);
+  });
+
+  it("Cant place disc on an already taken loaction", function() {
+     expect(game2.placeDisc(1)).toEqual("Spots Taken");
+  });
+
+  it("Cant place disc on an already taken loaction", function() {
+     expect(game3.placeDisc(2)).toEqual("Spots Taken");
   });
 });

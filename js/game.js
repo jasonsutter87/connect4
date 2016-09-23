@@ -38,6 +38,6 @@ Game.prototype.checkDiangles = function(){}
 
 
 //Driver Code
-game = new Game();
-game.boardToMatrix()
-console.log(game.boardMatrix)
+// game = new Game();
+// game.boardToMatrix()
+// console.log(game.boardMatrix)
