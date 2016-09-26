@@ -1,5 +1,6 @@
 $(document).on('ready', function(){
 	console.log('READY')
+
 	game = new Game()
 	clickEvents();
 })
@@ -8,6 +9,22 @@ $(document).on('ready', function(){
 //update board
 
 clickEvents = function(){
+
+  //This function will know where the user has clicked and will be able to display all element that belongs to that column
+  $(".center .box").on("click", function(e){
+    //select the name of the class that was clicked. It will be a string with three class names
+    var col = $(this).attr("class");
+
+    //slice the col#number class name from the string with three class name.
+    //Get all div with that class, reverser it and then call .each
+    $($("."+col.slice(11)).get().reverse()).each(function( index, value ) {
+        console.log(value);
+        console.log(index);
+    });
+  })
+
+
+
 	$('.col1').on('click', function(){
 		 game.placeDisc($(this).attr('id'))
 		 if(game.board[$(this).attr('id') - 1] == "R"){
@@ -15,7 +32,6 @@ clickEvents = function(){
 		 }else{
 		 	$(this).css('background-color', 'black')
 		 }
-
 	})
 
 	$('.col2').on('click', function(){
@@ -53,7 +69,7 @@ clickEvents = function(){
 		 	$(this).css('background-color', 'black')
 		 }
 	})
-	
+
 	$('.col6').on('click', function(){
 		game.placeDisc($(this).attr('id'))
 		 if(game.board[$(this).attr('id') - 1] == "R"){
