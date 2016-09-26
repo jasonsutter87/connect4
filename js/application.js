@@ -18,8 +18,8 @@ clickEvents = function(){
     //slice the col#number class name from the string with three class name.
     //Get all div with that class, reverser it and then call .each
     $($("."+col.slice(11)).get().reverse()).each(function( index, value ) {
-        console.log(value);
-        console.log(index);
+      console.log(value);
+      console.log(index);
     });
   })
 
