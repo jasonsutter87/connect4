@@ -2,8 +2,8 @@ function transpose(boardArray) {
     return boardArray[0].map(function (_, c){
     	 return boardArray.map(function (r) {
     	 	 return r[c];
-    	 	});
-    	});
+	 	});
+	});
 }
 
 var Game = function(boardArray) {
@@ -17,12 +17,12 @@ var Game = function(boardArray) {
 
 
 Game.prototype.nextTurn = function(){
-	// var turn = document.getElementById("Turn");
+	var turn = document.getElementById("Turn");
 	if(this.currentTurn == 'R'){
-		 // $('#Turn').css('background-color', 'black')
+		 $('#Turn').css('background-color', 'black')
 		 this.currentTurn = 'B'
 	}else{
-		 // $(turn).css('background-color', 'red')
+		 $(turn).css('background-color', 'red')
 		 this.currentTurn = 'R'
 	}
 }
@@ -76,41 +76,3 @@ Game.prototype.whoWonVertical = function(){
 			
 	}
 }
-Game.prototype.gameOver = function(){}
-Game.prototype.checkRows = function(){}
-Game.prototype.checkDiangles = function(){}
-
-// //DRIVER CODE
-// game = new Game()
-// // console.log(game.board)
-// game.whoWonVertical()
-
-
-
-// game.placeDisc(1)
-// // console.log(game.board)
-// game.whoWonVertical()
-
-// game.placeDisc(2)
-// // console.log(game.board)
-// game.whoWonVertical()
-
-// game.placeDisc(1)
-// // console.log(game.board)
-// game.whoWonVertical()
-
-// game.placeDisc(2)
-// // console.log(game.board)
-// game.whoWonVertical()
-
-// game.placeDisc(1)
-// // console.log(game.board)
-// game.whoWonVertical()
-
-// game.placeDisc(2)
-// // console.log(game.board)
-// game.whoWonVertical()
-
-// game.placeDisc(1)
-// console.log(game.board)
-// game.whoWonVertical()
