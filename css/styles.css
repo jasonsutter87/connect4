@@ -19,11 +19,22 @@ body{
 }
 
 .box{
-  background-color: tan;
   border-radius: 50px;
   width: 100px;
   height: 100px;
   display: inline-block;
+}
+
+.boxTan {
+  background-color: tan;
+}
+
+.boxRed {
+  background-color: red;
+}
+
+.boxBlack {
+  background-color: #000000;
 }
 
 .board{
