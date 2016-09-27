@@ -24,16 +24,22 @@ clickEvents = function(){
     //this done is just to stop the if. Also saving whoseTurn before get into the loop
     var done = false;
     var whoseTurn = game.whoseTurn();
-
+    game.whoseTurn();
     $.each(reversed, function( index, value ) {
 
       //if there are spot available replace class with the right color
       if(value.hasClass("boxTan") && done == false){
         if(whoseTurn == "R"){
+          spot = $(this).attr('class').split(" ")[2].slice(-1)
+          game.placeDisc(spot)
+          game.whoWonVertical()
           value.removeClass("boxTan").addClass("boxRed");
           done = true;
         }else if(whoseTurn == "B"){
+          spot = $(this).attr('class').split(" ")[2].slice(-1)
+          game.placeDisc(spot)
           value.removeClass("boxTan").addClass("boxBlack");
+          game.whoWonVertical()
           done = true;
         }
       }

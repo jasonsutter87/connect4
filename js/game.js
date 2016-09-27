@@ -17,18 +17,18 @@ var Game = function(boardArray) {
 
 
 Game.prototype.nextTurn = function(){
+	// var turn = document.getElementById("Turn");
 	if(this.currentTurn == 'R'){
+		 // $('#Turn').css('background-color', 'black')
 		 this.currentTurn = 'B'
 	}else{
+		 // $(turn).css('background-color', 'red')
 		 this.currentTurn = 'R'
 	}
 }
 
 Game.prototype.whoseTurn = function(){
-	if(this.currentTurn == ''){
-		this.nextTurn()
-		return 'R'
-	}else if(this.currentTurn == 'R'){
+	if(this.currentTurn == 'R'){
 		this.nextTurn()
 		return 'R'
 	}else{
@@ -41,8 +41,6 @@ Game.prototype.placeDisc = function(index){
 	if(this.board[index - 1].length < 6){
 		this.board[index - 1].push(this.whoseTurn())
 		return this.board
-	}else{
-		return "Spots Taken"
 	}
 }
 
@@ -68,9 +66,9 @@ Game.prototype.whoWonVertical = function(){
 				black = []
 			}else{
 				if(red.length >= 4 ){
-					console.log("RED WON!")
+					alert("RED WON!")
 				}else{
-					console.log("BLACK WON!")
+					alert("BLACK WON!")
 				} 
 			}
 			
