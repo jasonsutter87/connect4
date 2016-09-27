@@ -1,27 +1,17 @@
 var Game = function(boardArray) {
-  this.boardMatrix = [];
   this.currentTurn = 'R';
   if(boardArray != null){
   	this.board = boardArray
   }else{
-  	this.board = ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''];
+  	this.board = [[],[],[],[],[],[],[]]
   }
 }
 
-Game.prototype.boardToMatrix = function() {
-  boardMatrix = [];
-  for (i=0; i<6; i++) {
-    boardMatrix.push(this.board.slice((i*7), ((i+1)*7)));
-  }
-  this.boardMatrix = boardMatrix.reverse()
-}
+
 Game.prototype.nextTurn = function(){
-	var turn = document.getElementById("Turn");
 	if(this.currentTurn == 'R'){
-		 $('#Turn').css('background-color', 'black')
 		 this.currentTurn = 'B'
 	}else{
-		 $(turn).css('background-color', 'red')
 		 this.currentTurn = 'R'
 	}
 }
@@ -40,15 +30,14 @@ Game.prototype.whoseTurn = function(){
 }
 
 Game.prototype.placeDisc = function(index){
-	if(index > 42){
-		return "Spot not on the board"	
-	}else if(this.board[index - 1] == ""){
-		this.board[index - 1] = this.whoseTurn()
+	if(this.board[index - 1].length < 6){
+		this.board[index - 1].push(this.whoseTurn())
 		return this.board
 	}else{
 		return "Spots Taken"
 	}
 }
+
 
 Game.prototype.matrixToBoard = function(){
 	this.board = [].concat.apply([], this.boardMatrix )
@@ -68,4 +57,17 @@ Game.prototype.whoWon = function(){}
 Game.prototype.gameOver = function(){}
 Game.prototype.checkRows = function(){}
 Game.prototype.checkDiangles = function(){}
+
+
+game = new Game()
+console.log(game.board)
+
+game.placeDisc(1)
+console.log(game.board)
+
+game.placeDisc(2)
+console.log(game.board)
+
+game.placeDisc(1)
+console.log(game.board)
 
