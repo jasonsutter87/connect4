@@ -1,3 +1,11 @@
+function transpose(boardArray) {
+    return boardArray[0].map(function (_, c){
+    	 return boardArray.map(function (r) {
+    	 	 return r[c];
+    	 	});
+    	});
+}
+
 var Game = function(boardArray) {
   this.currentTurn = 'R';
   if(boardArray != null){
@@ -43,31 +51,68 @@ Game.prototype.matrixToBoard = function(){
 	this.board = [].concat.apply([], this.boardMatrix )
 }
 
-
-Game.prototype.transpose = function() {
-  var array = this.boardMatrix;
-  this.boardMatrix = array[0].map(function(col, i) {
-    return array.map(function(row) {
-        return row[i]
-    })
-  });
- }
-
-Game.prototype.whoWon = function(){}
+Game.prototype.whoWonVertical = function(){
+	for(var i = 0; i < 6; i++){
+		red = []
+		black = []
+		if(game.board[i].length >= 4){
+			game.board[i].forEach(function(value){
+				if(value == "R"){
+					red.push(value)
+				}else{
+					black.push(value)
+				}
+			})
+			if(red.length != 4 && black.length != 4 ){
+				red = []
+				black = []
+			}else{
+				if(red.length >= 4 ){
+					console.log("RED WON!")
+				}else{
+					console.log("BLACK WON!")
+				} 
+			}
+			
+		}
+			
+	}
+}
 Game.prototype.gameOver = function(){}
 Game.prototype.checkRows = function(){}
 Game.prototype.checkDiangles = function(){}
 
+// //DRIVER CODE
+// game = new Game()
+// // console.log(game.board)
+// game.whoWonVertical()
 
-game = new Game()
-console.log(game.board)
 
-game.placeDisc(1)
-console.log(game.board)
 
-game.placeDisc(2)
-console.log(game.board)
+// game.placeDisc(1)
+// // console.log(game.board)
+// game.whoWonVertical()
 
-game.placeDisc(1)
-console.log(game.board)
+// game.placeDisc(2)
+// // console.log(game.board)
+// game.whoWonVertical()
 
+// game.placeDisc(1)
+// // console.log(game.board)
+// game.whoWonVertical()
+
+// game.placeDisc(2)
+// // console.log(game.board)
+// game.whoWonVertical()
+
+// game.placeDisc(1)
+// // console.log(game.board)
+// game.whoWonVertical()
+
+// game.placeDisc(2)
+// // console.log(game.board)
+// game.whoWonVertical()
+
+// game.placeDisc(1)
+// console.log(game.board)
+// game.whoWonVertical()
