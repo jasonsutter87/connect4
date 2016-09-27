@@ -23,12 +23,14 @@ clickEvents = function(){
           spot = $(this).attr('class').split(" ")[2].slice(-1)
           game.placeDisc(spot)
           game.whoWonVertical()
+          console.log(game.board)
           value.removeClass("boxTan").addClass("boxRed");
         }
         else if(whoseTurn == "B"){
           spot = $(this).attr('class').split(" ")[2].slice(-1)
           game.placeDisc(spot)
           value.removeClass("boxTan").addClass("boxBlack");
+          console.log(game.board)
           game.whoWonVertical()
         }
         done = true;

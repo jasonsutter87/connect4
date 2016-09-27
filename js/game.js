@@ -15,7 +15,6 @@ var Game = function(boardArray) {
   }
 }
 
-
 Game.prototype.nextTurn = function(){
 	var turn = document.getElementById("Turn");
 	if(this.currentTurn == 'R'){
@@ -56,11 +55,15 @@ Game.prototype.whoWonVertical = function(){
 		if(game.board[i].length >= 4){
 			game.board[i].forEach(function(value){
 				if(value == "R"){
+					console.log(red)
+					black = []
 					red.push(value)
-				}else{
+				}else {
+					red = []
 					black.push(value)
 				}
 			})
+
 			if(red.length != 4 && black.length != 4 ){
 				red = []
 				black = []
