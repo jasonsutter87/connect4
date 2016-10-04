@@ -8,7 +8,8 @@ body{
 
 .container{
   padding: 2px;
-  margin-left: 25%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #turn{
@@ -39,9 +40,10 @@ body{
 }
 
 .board{
-	padding-top: 25px;
-	border-radius: 25px;
-	width: 790px;
-	height: 675px;
-	background-color: blue;
+  padding-top: 25px;
+  border-radius: 25px;
+  width: 790px;
+  height: 675px;
+  background-color: blue;
 }
+
