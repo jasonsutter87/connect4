@@ -16,12 +16,12 @@ var Game = function(boardArray) {
 }
 
 Game.prototype.nextTurn = function(){
-	var turn = document.getElementById("Turn");
+	// var turn = document.getElementById("Turn");
 	if(this.currentTurn == 'R'){
-		 $('#Turn').css('background-color', 'black')
+		 // $('#Turn').css('background-color', 'black')
 		 this.currentTurn = 'B'
 	}else{
-		 $(turn).css('background-color', 'red')
+		 // $(turn).css('background-color', 'red')
 		 this.currentTurn = 'R'
 	}
 }
@@ -69,9 +69,11 @@ Game.prototype.whoWonVertical = function(){
 				black = []
 			}else{
 				if(red.length >= 4 ){
-					alert("RED WON!")
+					// alert("RED WON!")
+					return "RED WON!"
 				}else{
-					alert("BLACK WON!")
+					// alert("BLACK WON!")
+					return "BLACK WON!"
 				} 
 			}
 			

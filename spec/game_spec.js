@@ -1,10 +1,8 @@
 describe("generates a new board", function() {
   beforeEach(function() {
     game = new Game();
-    gameBoard = []
-    for (var i = 1; i <= 42; i++) {
-      gameBoard.push('');
-    }
+    gameBoard = [[],[],[],[],[],[],[]]
+    
   });
 
   it("board should not be null", function() {
@@ -12,7 +10,7 @@ describe("generates a new board", function() {
   });
 
   it("board should should have 42 spots", function() {
-     expect(game.board.length).toEqual(42);
+     expect(game.board.length).toEqual(7);
   });
 
   it("board should be fill will all empty strings", function() {
@@ -23,7 +21,7 @@ describe("generates a new board", function() {
 
 describe("determins whoese turn", function() {
   beforeEach(function() {
-    game = new Game(['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
+    game = new Game();
   });
 
   it("red always goes first", function() {
@@ -46,35 +44,38 @@ describe("determins whoese turn", function() {
 describe("game play", function() {
   beforeEach(function() {
     game = new Game();
-    game1 = new Game(['R','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
-    game2 = new Game(['R','B','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
-    game3 = new Game(['R','B','','','','','','R','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','']);
+    game1 = [['R'],[],[],[],[],[],[]]
+    game2  = [['R','B'],[],[],[],[],[],[]]
+    game3  = [['R','B'],['R'],[],[],[],[],[]]
   });
 
   it("red turn, places disc in location number 1", function() {
-     expect(game.placeDisc(1)).toEqual(game1.board);
+     expect(game.placeDisc(1)).toEqual(game1);
   });
 
   it("black turn, places disc in location number 2", function() {
      game.placeDisc(1)
-     expect(game.placeDisc(2)).toEqual(game2.board);
+     expect(game.placeDisc(1)).toEqual(game2);
   });
 
   it("red turn, places disc in location number 8", function() {
-     expect(game2.placeDisc(8)).toEqual(game3.board);
+     game.placeDisc(1)
+     game.placeDisc(1)
+     expect(game.placeDisc(2)).toEqual(game3);
   });
 
-  it("Cant place disc on an already taken loaction", function() {
-     expect(game2.placeDisc(1)).toEqual("Spots Taken");
+});
+
+describe("Vertical Win Check", function() {
+  it("Red will win!", function() {
+     game = new Game();
+     game.board = [['R','R','R','R'],['B','B','B'],[],[],[],[],[]]
+     expect(game.whoWonVertical()).toEqual("RED WON!");
   });
 
-  it("Cant place disc on an already taken loaction", function() {
-     expect(game3.placeDisc(2)).toEqual("Spots Taken");
+  it("Black will win!", function() {
+     game = new Game();
+     game.board = [['R','R'],['R','R'],[],[],['B','B','B','B'],[],[]]
+     expect(game.whoWonVertical()).toEqual("BLACK WON!");
   });
-
-
-  it("Cant place disc off the board", function() {
-     expect(game3.placeDisc(60)).toEqual("Spot not on the board");
-  });
-
 });
